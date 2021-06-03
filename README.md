@@ -158,3 +158,8 @@
 			■SampleStaff.java
 		◇Globe.java
 			■SampleGlobe.java
+
+## その他記載事項
+	改変可
+	
+	
