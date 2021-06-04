@@ -209,22 +209,38 @@
       
 ## ファイル階層　　　　　　　　　　　　　　　　　　　　　
 	◆Main.java
-		◇Hero.java
-		◇Wizard.java
-		◇Fighter.java
+	
+	操作キャラクターの作成
+	 ⬜︎Character PL:
+	  ↑継承
+	 ◆Hero 担当:
+	 ◆Wizard 担当:
+	 ◆Fighter 担当:
 
-		◇Slime.java
-		◇Matango.java
-		◇Dragon.java
+	モンスターの作成
+	 ⬜︎monster PL:
+	  ↑継承
+	 ◆Slime 担当:
+	 ◆Matango 担当:
+	 ◆Dragon 担当:
 
-		◇Sword.java
-			■SampleSword.java
-		◇Staff.java
-			■SampleStaff.java
-		◇Globe.java
-			■SampleGlobe.java
+	装備の作成
+	 ⬜︎weapon PL:
+	  ↑継承
+	 ◆Sword 担当:
+	 ◆Staff 担当:
+	 ◆Globe 担当:
 
 ## その他記載事項
-	改変可
-	
+	・キャラクター作成部門３人（内１人がリーダー）
+	・モンスター作成部門３人（内１人がリーダー）
+	・リーダーが大元となるクラスを作成し、それを継承して具体的なクラスを作成していく
+	 例）Character をリーダーAさんが作成
+	   Characterを継承してAさんがHero、BさんがWizard、CさんがFighterを作成
+	・具体的なクラス名（Hero,Slimeなど）は変えてもOK、その場合は全体に情報を共有する
+	・各クラスは名前、属性、操作をクラス図にまとめて共有する（概要通りでなくてもよい）
+	・余裕があればさらに継承してSuperHeroなどを作ったり、スキルを増やしたりしてもよい
+	・Mainクラスに関しては、現時点では各人が作成して完成形とする
+	（各クラスを分担して作成しGitHub上に集約、その後各々でクローンしてMainクラスを作成し完成させる）
+	・ポートフォリオなどの成果物として発表してもよい
 	
