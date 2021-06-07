@@ -133,6 +133,15 @@
 	②ユーザー登録機能
 
 	③キャラクター作成機能
+		□Character.java(抽象クラス）□
+			名前：　String name
+			HP：　int hp
+			最大HP：　int MAX_HP
+			MP：　int mp
+			最大MP：　int MAX_MP
+
+			メソッド：　なし
+
 		◆Hero.java (勇者)◆
 			名前：name
 			HP:hp（初期値は300）
@@ -211,14 +220,14 @@
 	◆Main.java
 	
 	操作キャラクターの作成
-	 ⬜︎Character PL:
+	 ⬜︎Character PL:N
 	  ↑継承
-	 ◆Hero 担当:
-	 ◆Wizard 担当:
-	 ◆Fighter 担当:
+	 ◆Hero 担当:NO
+	 ◆Wizard 担当:SU
+	 ◆Fighter 担当:SI
 
 	モンスターの作成
-	 ⬜︎monster PL:
+	 ⬜︎monster PL:HI
 	  ↑継承
 	 ◆Slime 担当:
 	 ◆Matango 担当:
