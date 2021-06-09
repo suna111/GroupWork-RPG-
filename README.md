@@ -133,7 +133,7 @@
 	②ユーザー登録機能
 
 	③キャラクター作成機能
-		□Character.java(抽象クラス）□
+		□Character.java(抽象クラス）□（担当noborikawa）
 			名前：　String name
 			HP：　int hp
 			最大HP：　int MAX_HP
@@ -142,7 +142,7 @@
 
 			メソッド：　なし
 
-		◆Hero.java (勇者)◆
+		◆Hero.java (勇者)◆（担当noborikawa）
 			名前：name
 			HP:hp（初期値は300）
 			最大HP：MAX_HP(定数、300)
@@ -153,7 +153,7 @@
 			回復:Aid　味方一人のHPを回復する（10　+　1～5のランダム、MPを5消費）
 			雷斬り:Thunder力を込めた剣で切り裂く（30のダメージ、MPを15消費）
 			
-		◆Wizard.java(魔法使い)◆
+		◆Wizard.java(魔法使い)◆（担当suna111）
 			名前:name
 			HP:hp（初期値は100）
 			最大HP：MAX_HP(定数、100)
@@ -164,7 +164,7 @@
 			炎魔法:Fire　炎で焼き尽くす（20のダメージ、MPを10消費）
 			自暴自棄：Bomb　MPをすべて使って爆発させる（消費MP分のダメージ）
 
-		◆Fighter.java(格闘家) ◆
+		◆Fighter.java(格闘家) ◆（担当pongo1019）
 			名前:name
 			HP:hp（初期値は200）
 			最大HP：MAX_HP(定数、200)
@@ -176,21 +176,28 @@
 			自己研鑽：PowerUp　自分の攻撃力を5あげる（戦う、をしたときのダメージが5上がる）
 
 	④モンスター生成機能
-		◆Slime.java(スライム) ◆
-			名前:name（スライム１，２，３などと複数召喚出来る）
+		□Monsterクラス(抽象クラス)□（担当hizumi00）
+			 名前：　char suffix
+			 HP：　int hp
+
+			 attack
+			 run
+			 
+		◆Slime.java(スライム) ◆（担当hizumi00）
 			HP:hp(初期値は10)
 										
-			攻撃：Attack　ぷるぷる攻撃する（3のダメージ）
-			うずくまる：Crouch　なにもせず丸くなる
+			攻撃：attack　ぷるぷる攻撃する（3のダメージ）
+			うずくまる：crouch　なにもせず丸くなる
+			逃げる：run ぷるぷる逃げ出す
 
-		◆Matango.java(おばけキノコ) ◆
+		◆Matango.java(おばけキノコ) ◆（担当Y-n-K）
 			名前:name
 			HP:hp(初期値は100)
 										
 			毒攻撃：Poison １体のHpが3減少、2ターン続く
 			大暴れ:Rampage　敵全員に5のダメージ
 
-		◆Dragon.java(ドラゴン) ◆
+		◆Dragon.java(ドラゴン) ◆（担当h-maya)
 			名前:name
 			HP:hp(初期値は500)
 										
@@ -220,18 +227,18 @@
 	◆Main.java
 	
 	操作キャラクターの作成
-	 ⬜︎Character PL:N
+	 ⬜︎Character PL:noborikawa
 	  ↑継承
-	 ◆Hero 担当:NO
-	 ◆Wizard 担当:SU
-	 ◆Fighter 担当:SI
+	 ◆Hero 担当:noborikawa
+	 ◆Wizard 担当:suna111
+	 ◆Fighter 担当:pongo1019
 
 	モンスターの作成
-	 ⬜︎monster PL:HI
+	 ⬜︎monster PL:hizumi00
 	  ↑継承
-	 ◆Slime 担当:
-	 ◆Matango 担当:
-	 ◆Dragon 担当:
+	 ◆Slime 担当:hizumi00
+	 ◆Matango 担当:h-maya
+	 ◆Dragon 担当:Y-n-K
 
 	装備の作成
 	 ⬜︎weapon PL:
