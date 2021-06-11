@@ -4,27 +4,10 @@ public class Slime extends Monster {
 	public Slime(char suffix) {// コンストラクタ
 		this.suffix = suffix;
 	}
-
-	// 名前を取得する(getter)
-	// インスタンス作成時にsuffixを設定しているのでsetterはなし
+	// Monster.getNameのオーバーライド
 	public String getName() {
 		return "スライム" + this.suffix;
 	}
-	// HPを取得する(getter)
-	public int getHp() {
-		return this.hp;
-	}
-	// HPを設定する(setter)
-	public void setHP(int hp) {
-		if(hp > 10) {// 初期値は超えない
-			throw new IllegalArgumentException("over max hp");
-		}
-		if(hp < 0) {// マイナスの値は入れない
-			throw new IllegalArgumentException("under zero")
-		}
-		this.hp = hp;
-	}
-
 	/* 操作・メソッド */
 	// キャラクターの固有メソッド
 		// 攻撃1 ぷるぷる(3のダメージ)
@@ -38,26 +21,26 @@ public class Slime extends Monster {
 				c.getName() + "に3のダメージ！",
 				c.getName() + "のHPは残り" + c.getHp()
 			};
-			for(String c : comment) {
-				System.out.println(c);
+			for(String cm : comment) {
+				System.out.println(cm);
 				Thread.sleep(1000);
 			}
 		}
 		// 攻撃(?)2 丸くなる(何も起こらない)
-		public void crouch() {
+		public void crouch() throws Exception {
 			//出力処理
 			String[] comment = {
 				"スライム" + this.suffix + "は丸くなった！",
 				"しかし何も起こらなかった・・・"
 			};
-			for(String c : comment) {
-				System.out.println(c);
+			for(String cm : comment) {
+				System.out.println(cm);
 				Thread.sleep(1000);
 			}
 		}
 		// 逃げる
 		public void run() {
-			System.out.printn("スライム" + this.suffix + "はぷるぷる逃げ出した！");
+			System.out.println("スライム" + this.suffix + "はぷるぷる逃げ出した！");
 		}
 
 }
