@@ -2,6 +2,8 @@ public abstract class Monster {
 	/* 属性・フィールド */
 	char suffix;
 	int hp;
+	int MAX_HP;
+	
 	// 名前を取得する(getter)
 	// インスタンス作成時にsuffixを設定しているのでsetterはなし
 	public abstract String getName();
@@ -11,7 +13,7 @@ public abstract class Monster {
 	}
 	// HPを設定する(setter)
 	public void setHp(int hp) {
-		if(hp > 10) {// 初期値は超えない
+		if(hp > MAX_HP) {// 初期値は超えない
 			throw new IllegalArgumentException("over max hp");
 		}
 		this.hp = hp;
