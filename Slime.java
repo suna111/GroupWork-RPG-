@@ -1,6 +1,7 @@
 public class Slime extends Monster {
 	/* 属性・フィールド */
 	int hp = 10;// 初期値
+	final int MAX_HP = 10;
 	public Slime(char suffix) {// コンストラクタ
 		this.suffix = suffix;
 	}
@@ -14,7 +15,7 @@ public class Slime extends Monster {
 		public void attack(Character c) throws Exception {// キャラクタークラスを継承しているものすべてに適応
 			// 内部処理
 			int damage = 3;
-			c.hp -= damage;
+			c.setHp(c.getHp() - damage);
 			// 出力処理
 			String[] comment = {
 				"スライム" + this.suffix + "のぷるぷる攻撃！",
