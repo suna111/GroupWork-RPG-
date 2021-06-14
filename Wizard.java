@@ -1,10 +1,18 @@
 public class Wizard extends Character{
 //属性・フィールド
-	//String nameはCharacterから継承
-	final int MAX_HP = 100;//最大HP、定数
-	int hp = 100;//HP、初期値を設定
-	final int MAX_MP = 80;//最大MP、定数
-	int mp = 80;//MP、初期値を設定
+	private String name;
+	private final int MAX_HP = 100;//最大HP、定数
+	private int hp;//HP、初期値を設定
+	private final int MAX_MP = 80;//最大MP、定数
+	private int mp;//MP、初期値を設定
+
+//コンストラクタ
+	public Wizard(String name) {
+		this.name = name;
+		this.hp = 100;
+		this.mp = 80;
+
+	}
 
 //操作・メソッド
 
@@ -23,8 +31,8 @@ public class Wizard extends Character{
 	 			m.getName() + "のHPは残り" + m.getHp()//テスト用
 	 	};
 
-	 	for(String c : comment) {//繰り返し出力処理
-	 		System.out.println(c);
+	 	for(String cm : comment) {//繰り返し出力処理
+	 		System.out.println(cm);
 	 		Thread.sleep(1000);//1秒ごとに出力
 	 	}
 	 }
@@ -46,8 +54,8 @@ public class Wizard extends Character{
 		 			m.getName() + "のHPは残り" + m.getHp()//テスト用
 		 	};
 
-		 	for(String c : comment) {//繰り返し出力処理
-		 		System.out.println(c);
+		 	for(String cm : comment) {//繰り返し出力処理
+		 		System.out.println(cm);
 		 		Thread.sleep(1000);//1秒ごとに出力
 		 	}
 		} else {//MPが10以下の場合何もしない
@@ -64,7 +72,7 @@ public class Wizard extends Character{
 			m.setHp(m.getHp() - damage);//ダメージを受けたあとのHPを設定
 			this.setMp(0);//MPを0に設定
 
-
+			//出力処理
 			String [] comment = {//配列に入れる
 					this.getName() + "は自暴自棄になった！",
 					m.getName() + "に" + damage + "のダメージ！",
@@ -73,12 +81,42 @@ public class Wizard extends Character{
 					m.getName() + "のHPは残り" + m.getHp()//テスト用
 			};
 
-			for(String c : comment) {//繰り返し出力処理
-		 		System.out.println(c);
+			for(String cm : comment) {//繰り返し出力処理
+		 		System.out.println(cm);
 		 		Thread.sleep(1000);//1秒ごとに出力
 		 	}
 		 } else {//MPが0の場合何もしない
 			 System.out.println("もうMPは残っていない！");
+		 }
+	 }
+
+//	 public void phantom(Monster m) throws Exception{//一定ターン数行動不能にする
+//		 //内部処理
+//		 m.setVind(2);//行動不能ターン数を２に設定
+//
+//		 //出力処理
+//		 String [] comment = {
+//			this.getName() + "は幻を生み出した！",
+//			"幻の猫は"+ m.getName() + "にごろごろ擦り寄った！",
+//			m.getName() + "は幻の猫に夢中になってしまった・・・",
+//			"もはや攻撃どころではない！"
+//		 };
+//		 for (String cm : comment) {
+//			 System.out.println(cm);
+//			 Thread.sleep(1000);
+//		 }
+//	 }
+
+	 public void run() throws Exception {
+		 //内部処理
+
+		 //出力処理
+		 String [] comment = {
+				 this.getName() + "は杖を投げ捨てて逃げた！"
+		 };
+
+		 for(String cm : comment) {
+			 System.out.println(cm);
 		 }
 	 }
 
