@@ -7,11 +7,15 @@ public class Wizard extends Character{
 	private int mp;//MP、初期値を設定
 
 //コンストラクタ
-	public Wizard(String name) {
-		this.name = name;
-		this.hp = 100;
-		this.mp = 80;
-
+	public Wizard(String name) {//名前を引数に取る
+		this.setName("魔法使い " + name);
+		this.setHp(100);
+		this.setMp(80);
+	}
+	public Wizard() {//引数なしでも誕生出来る
+		this.setName("魔法使い マジカル");
+		this.setHp(100);
+		this.setMp(80);
 	}
 
 //操作・メソッド
