@@ -1,7 +1,23 @@
 public abstract class Character {
-	String name;
-	int hp;
-	int MAX_HP;
-	int mp;
-	int MAX_MP;
+	
+	int hp; //HP
+	int mp; //MP
+	
+	public int getHp() {
+		return this.hp;
+	} //getter
+	public void setHp(int hp) {
+		this.hp = hp;
+	} //setter
+	
+	public int getMp() {
+		return this.mp;
+	} //getter
+	public void setMp(int mp) {
+		this.mp = mp;
+	} //setter
+	
+	public void run() {
+		System.out.println("GAME OVER");
+	} //逃げる "GAME OVER"は仮
 }
