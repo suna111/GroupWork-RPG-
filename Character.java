@@ -1,17 +1,21 @@
 public abstract class Character {
 	
 	int hp; //HP
-	int MAX_HP; //最大HP
 	int mp; //MP
-	int MAX_MP; //最大MP
 	
-	public String getName(); {
-		return this.name;
-	}
+	public int getHp() {
+		return this.hp;
+	} //getter
+	public void setHp(int hp) {
+		this.hp = hp;
+	} //setter
 	
-	public void setName(String name) {
-		this.name = name;
-	}
+	public int getMp() {
+		return this.mp;
+	} //getter
+	public void setMp(int mp) {
+		this.mp = mp;
+	} //setter
 	
-	public abstract run(); //逃げる
+	public abstract run() {"GAME OVER"}; //逃げる "GAME OVER"は仮
 }
