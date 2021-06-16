@@ -5,6 +5,6 @@ public class Hero extends Character {
 	int mp = 50;
 	final int MAX_MP = 50;
 	public void Attack(Monster m) {
-		m.hp = -10;
+		m.hp -= 10;
 	}
 }
