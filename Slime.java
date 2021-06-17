@@ -4,10 +4,9 @@ public class Slime extends Monster {
 	final int MAX_HP = 10;
 	public Slime(char suffix) {// コンストラクタ1
 		this.suffix = suffix;
-		this.setHp(10) {
-			if(hp > MAX_HP) {// 初期値は超えない
-				throw new IllegalArgumentException("over max hp");
-			}
+		this.setHp(10);
+		if(hp > MAX_HP) {// 初期値は超えない
+			throw new IllegalArgumentException("over max hp");
 		}
 	}
 	
