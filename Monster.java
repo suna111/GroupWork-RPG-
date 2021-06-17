@@ -11,7 +11,9 @@ public abstract class Monster {
 		return this.hp;
 	}
 	// HPを設定する(setter)
-	public void setHp(int hp);
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
 
 	/* 操作・メソッド */
 	// Characterクラスを継承しているクラスに対して攻撃
