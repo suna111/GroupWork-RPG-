@@ -4,15 +4,13 @@ public class Slime extends Monster {
 	final int MAX_HP = 10;
 	public Slime(char suffix) {// コンストラクタ1
 		this.suffix = suffix;
-	}
-	public Slime() {// コンストラクタ2
 		this.setHp(10) {
 			if(hp > MAX_HP) {// 初期値は超えない
 				throw new IllegalArgumentException("over max hp");
 			}
-			this.hp = hp;
 		}
 	}
+	
 	// Monster.getNameのオーバーライド
 	public String getName() {
 		return "スライム" + this.suffix;
