@@ -1,21 +1,29 @@
 public abstract class Character {
 	
+	String name; //名前
 	int hp; //HP
 	int mp; //MP
 	
+	public String getName() {
+		return this.name;
+	} //getter 名前
+	public void setHp(String name) {
+		this.name = name;
+	} //setter 名前
+	
 	public int getHp() {
 		return this.hp;
-	} //getter
+	} //getter HP
 	public void setHp(int hp) {
 		this.hp = hp;
-	} //setter
+	} //setter HP
 	
 	public int getMp() {
 		return this.mp;
-	} //getter
+	} //getter MP
 	public void setMp(int mp) {
 		this.mp = mp;
-	} //setter
+	} //setter MP
 	
 	public void run() {
 		System.out.println("GAME OVER");
