@@ -5,32 +5,40 @@ public class Hero extends Character {
 	private int mp; //MP
 	final int MAX_MP = 50; //最大MP
 
+	// 引数(名前入力)有のコンストラクタ
+	public Hero(String name) {
+		this.setHp(300);
+		this.setMp(50);
+		this.setName(name);
+	}
+	// 引数無のコンストラクタ
 	public Hero() {
 		this.setHp(300);
 		this.setMp(50);
+		this.setName("仮の名前");
 	}
 
-	public void attack(monster m) {
-		int damage = 10;
+	// 戦う
+	public void attack(Monster m) {
+		int damage = 20;
 		m.setHp(m.getHp() - damage);
-		System.out.println("勇者は" + damage + "のダメージを与えた。");
-	} /*戦う*/
+		System.out.println("勇者は" + m.getName() + "に" + damage + "のダメージを与えた。");
+	}
 	
-	public void aid(hero h) {
-		h.hp += 10;
-		this.mp -= 5;
-		System.out.println(h.hp);
-	} /*回復*/
-	public void aid(wizard w) {
-		w.hp += 10;
-		this.mp -= 5;
-		System.out.println(w.hp);
-	} /*回復*/	
-
-	public void thunder(monster m) {
-		m.hp -= 30;
-		this.mp -= 15;
-		System.out.println(m.hp);
-		System.out.println(h.mp);
-	} /*雷斬り*/
+	// 回復
+	public void aid(Character c) {
+		int recovery = 20;
+		c.setHp(c.getHp() + recovery);
+		this.setMp(this.getMp() - 5);
+		System.out.println(c.getName() + "のHPが" + recovery + "回復した。");
+	}
+	
+	//雷斬り
+	public void thunder(Monster m) {
+		int damage = 50;
+		m.setHp(m.getHp() - damage);
+		this.setMp(this.getMp() - 15);
+		System.out.println("勇者は" + m.getName() + "に" + damage + "のダメージを与えた。");
+		//System.out.println(h.mp);
+	} 
 }
