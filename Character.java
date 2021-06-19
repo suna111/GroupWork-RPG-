@@ -7,10 +7,10 @@ public abstract class Character {
 	public String getName() {
 		return this.name;
 	} //getter 名前
-	public void setHp(String name) {
+	public void setName(String name) {
 		this.name = name;
 	} //setter 名前
-	
+
 	public int getHp() {
 		return this.hp;
 	} //getter HP
@@ -26,6 +26,6 @@ public abstract class Character {
 	} //setter MP
 	
 	public void run() {
-		System.out.println("GAME OVER");
+	System.out.println("GAME OVER");
 	} //逃げる "GAME OVER"は仮
 }
