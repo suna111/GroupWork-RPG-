@@ -1,8 +1,9 @@
 public class Matango extends Monster {
 	/* 属性・フィールド */
-	int hp = 100;// 初期値
+	private int hp;// カプセル化したhpを設定
 	public Matango(char suffix) {// コンストラクタ
 		this.suffix = suffix;
+		this.hp = 100; //HPの初期値を設定
 	}
 
 	// Monster.getName のオーバーライド
@@ -10,20 +11,6 @@ public class Matango extends Monster {
 		return "マタンゴ" + this.suffix;
 	}
 
-	// HPを取得する(getter)
-	public int getHp() {
-		return this.hp;
-	}
-	// HPを設定する(setter)
-	public void setHP(int hp) {
-		if(hp > 100) {// 初期値は超えない
-			throw new IllegalArgumentException("over max hp");
-		}
-		if(hp < 0) {// マイナスの値は入れない
-			throw new IllegalArgumentException("under zero");
-		}
-		this.hp = hp;
-	}
 
 
 	/* 操作・メソッド */
@@ -33,16 +20,16 @@ public class Matango extends Monster {
 		public void attack(Character c) throws Exception {// キャラクタークラスを継承しているものすべてに適応
 			// 内部処理
 			int damage = 5;
-			c.hp -= damage;
+			c.setHp(c.getHp() - damage);
 			// 出力処理
 			String[] comment = {
-				"マタンゴ" + this.suffix + "になめられた！",
+				this.getName() + "になめられた！",
 				c.getName() + "に5のダメージ！",
 				c.getName() + "のHPは残り" + c.getHp()
 			};
 
-			for(String c : comment) {
-				System.out.println(c);
+			for(String cm : comment) {
+				System.out.println(cm);
 
 				Thread.sleep(1000);
 			}
@@ -56,47 +43,62 @@ public class Matango extends Monster {
 // // 				"マタンゴ" + this.suffix + "の羽交い絞め！",
 // // 				c.getName() + "は身動きが取れない・・・！"
 // // 			};
-// 			for(String c : comment) {
-// 				System.out.println(c);
+// 			for(String cm : comment) {
+// 				System.out.println(cm);
 // 				Thread.sleep(1000);
 // 			}
 // 		}
 	
-		// 攻撃3　毒攻撃（相手に10のダメージ、もしくはMP-2のダメージ。攻撃内容はランダムに決定。マタンゴ自身もHPを2使用する。)　
+		// 攻撃3　毒攻撃（相手に10のダメージ、もしくはMP-3のダメージ。攻撃内容はランダムに決定。マタンゴ自身もHPを2使用する。)　
 
 		public void poison(Character c) throws Exception {
 
 			this.hp -= 2; //マタンゴ　HP-2
 			int r = new java.util.Random().nextInt(5);
-			if(r % 2 = 1) {
-				int damege = 5;
-				c.hp -= damege;
+			if(r % 2 == 1) {
+				int damage = 10;
+				c.setHp(c.getHp() - damage);
 			}	else {
 				int m_damage = 3;
-				c.mp -= m_damage;
+				c.setMp(c.gettMp() - m_damage);
 			}
 			//出力処理
-			String[] comment = {
-				"マタンゴ" + this.suffix + "が毒を吐き出した！",
-// 				c.getName() + "に10のダメージ"
+			if(r % 2 == 1){
+				String[] comment = {
+				this.getName() + "が毒を吐き出した！",
+ 				c.getName() + "に10のダメージ"
+			};	else {
+				String[] comment = {
+				this.getName() + "が毒を吐き出した！",
+ 				c.getName() + "のMPを3奪った"				
 			};
 
-			for(String c : comment) {
-				System.out.println(c);
+			for(String cm : comment) {
+				System.out.println(cm);
 				Thread.sleep(1000);
 			}
 		}
 
-		// 攻撃4　大暴れ　敵全員に5のダメージ
-		public void rampage(Character C) throws Exception {
+		//攻撃4　大暴れ　敵全員に5のダメージ
+		public void rampage(Character c) throws Exception {
 			for(int i = 0; i < c.length; i++){
-				c[i].setHp(c[i].getHp-5);
+				c[i].setHp(c[i].getHp() - 5);
+			}
+			//出力処理
+			String[] comment = {
+				this.getName() + "の大暴れ！！",
+ 				c.getName() + "達全員に５ずつのダメージ！"
+			};
+
+			for(String cm : comment) {
+				System.out.println(cm);
+				Thread.sleep(1000);
 			}
 		}
 
 		// 逃げる
 		public void run() {
-			System.out.println("マタンゴ" + this.suffix + "は一目散に逃げ出した！");
+			System.out.println(this.getName() + "は一目散に逃げ出した！");
 		}
 
 }
