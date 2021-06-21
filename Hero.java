@@ -1,5 +1,5 @@
 public class Hero extends Character {
-	//private String name; //名前
+	private String name; //名前
 	private int hp; //HP
 	final int MAX_HP = 300; //最大HP
 	private int mp; //MP
@@ -15,7 +15,7 @@ public class Hero extends Character {
 	public Hero() {
 		this.setHp(300);
 		this.setMp(50);
-		this.setName("仮の名前");
+		this.setName("アーサー");
 	}
 
 	// 戦う
