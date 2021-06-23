@@ -1,7 +1,7 @@
 public class Dragon extends Monster {
 	// 属性・フィールド 
-	private int hp;// 初期値
-	FINAL int MAX_hp=500;
+	private int Hp;// 初期値
+	final int MAX_HP=500;
 	public Dragon(char suffix) {// コンストラクタ
 		this.suffix = suffix;
 		this.setHp(500);
@@ -29,12 +29,12 @@ public class Dragon extends Monster {
 			}
 		}
 		// 攻撃2 噛みつき(20のダメージ)
-		public void bite() throws Exception {
+		public void bite(Character c) throws Exception {
 			int damage = 20;
 			c.setHp(c.getHp() - damage);
 			//出力処理
 			String[] comment = {
-				+ getName() + "が噛み付いた"
+				getName() + "が噛み付いた"
 			};
 			for(String cm : comment) {
 				System.out.println(cm);
@@ -44,3 +44,5 @@ public class Dragon extends Monster {
 		// 逃げる
 		public void run() {
 			System.out.println( getName() + "は逃げた");
+		}
+	}
