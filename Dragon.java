@@ -1,9 +1,10 @@
 public class Dragon extends Monster {
 	// 属性・フィールド 
 	private int hp;// 初期値
-	final int MAX_hp=500;
+	FINAL int MAX_hp=500;
 	public Dragon(char suffix) {// コンストラクタ
 		this.suffix = suffix;
+		this.setHp(500);
 	}
 	// Monster.getNameのオーバーライド
 	public String getName() {
@@ -15,10 +16,10 @@ public class Dragon extends Monster {
 		public void attack(Character c) throws Exception {// キャラクタークラスを継承しているものすべてに適応
 			// 内部処理
 			int damage = 10;
-			c.hp -= damage;
+			c.setHp(c.getHp() - damage);
 			// 出力処理
 			String[] comment = {
-				"ドラゴン" + getName()+ "炎の息！",
+				getName()+ "炎の息！",
 				c.getName() + "に10のダメージ！",
 				c.getName() + "のHPは残り" + c.getHp()
 			};
@@ -29,9 +30,11 @@ public class Dragon extends Monster {
 		}
 		// 攻撃2 噛みつき(20のダメージ)
 		public void bite() throws Exception {
+			int damage = 20;
+			c.setHp(c.getHp() - damage);
 			//出力処理
 			String[] comment = {
-				"ドラゴン" + getName() + "が噛み付いた"
+				+ getName() + "が噛み付いた"
 			};
 			for(String cm : comment) {
 				System.out.println(cm);
@@ -40,7 +43,4 @@ public class Dragon extends Monster {
 		}
 		// 逃げる
 		public void run() {
-			System.out.println("ドラゴン" + getName() + "は逃げた");
-		}
-
-}
+			System.out.println( getName() + "は逃げた");
