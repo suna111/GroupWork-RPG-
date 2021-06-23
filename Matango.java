@@ -2,7 +2,7 @@ public class Matango extends Monster {
 	/* 属性・フィールド */
 	private int hp;// カプセル化したhpを設定
 	public Matango(char suffix) {// コンストラクタ
-		this.suffix = suffix;
+		this.suffix = suffix; // this.
 		this.hp = 100; //HPの初期値を設定
 	}
 
@@ -58,20 +58,28 @@ public class Matango extends Monster {
 			if(r % 2 == 1) {
 				int damage = 10;
 				c.setHp(c.getHp() - damage);
-			}	else {
-				int m_damage = 3;
-				c.setMp(c.gettMp() - m_damage);
-			}
-			//出力処理
-			if(r % 2 == 1){
+				// 出力処理
 				String[] comment = {
 				this.getName() + "が毒を吐き出した！",
  				c.getName() + "に10のダメージ"
-			};	else {
+			}	else {
+				int m_damage = 3;
+				c.setMp(c.getMp() - m_damage);
+				// 出力処理
 				String[] comment = {
 				this.getName() + "が毒を吐き出した！",
- 				c.getName() + "のMPを3奪った"				
-			};
+ 				c.getName() + "のMPを3奪った"	
+			}
+			// //出力処理
+			// if(r % 2 == 1){
+			// 	String[] comment = {
+			// 	this.getName() + "が毒を吐き出した！",
+ 		// 		c.getName() + "に10のダメージ"
+			// }	else {
+			// 	String[] comment = {
+			// 	this.getName() + "が毒を吐き出した！",
+ 		// 		c.getName() + "のMPを3奪った"				
+			// };
 
 			for(String cm : comment) {
 				System.out.println(cm);
@@ -80,15 +88,17 @@ public class Matango extends Monster {
 		}
 
 		//攻撃4　大暴れ　敵全員に5のダメージ
-		public void rampage(Character c) throws Exception {
+		public void rampage(Character... c) throws Exception {
 			for(int i = 0; i < c.length; i++){
 				c[i].setHp(c[i].getHp() - 5);
-			}
-			//出力処理
-			String[] comment = {
+				
+				//出力処理
+				String[] comment = {
 				this.getName() + "の大暴れ！！",
- 				c.getName() + "達全員に５ずつのダメージ！"
+ 				+ " 全員に５ずつのダメージ！"
 			};
+			}
+
 
 			for(String cm : comment) {
 				System.out.println(cm);
