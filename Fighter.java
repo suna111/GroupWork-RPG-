@@ -1,17 +1,33 @@
+package model;
+
 public class Fighter extends Character {
 	//フィールド
 	private String name;
 	private int hp;
-	private final int MAX_HP = 350;
+	final int MAX_HP = 350;
 	private int mp;
-	private final int MAX_MP = 30;
+	final int MAX_MP = 30;
 	private int mdt = 0;//瞑想メソッドのカウント
 
 	//コンストラクタ
-	public Fighter(String name) {
-		this.hp = 350;
-		this.mp = 30;
+	public Fighter(String name) {//nameを引数に取る
+		this.setHp(350);
+		this.setMp(30);
 		this.setName(name);
+	}
+	public Fighter() {//引数なし
+		this.setHp(350);
+		this.setMp(30);
+		this.setName("アセロラ");
+	}
+
+	//Fighter特有のgetterとsetter
+	public int getMdt() {
+		return mdt;
+	}
+
+	public void setMdt(int mdt) {
+		this.mdt = mdt;
 	}
 
 	//getter
@@ -28,11 +44,11 @@ public class Fighter extends Character {
 	//setter
 	public void setHp(int hp) {
 		//MAXHPは超えない
-		if(this.getHp() > this.MAX_MP) {
-			this.hp = this.MAX_MP;
+		if(hp > this.MAX_HP) {
+			this.hp = this.MAX_HP;
 		}
 		//HPが0になった際の処理
-		if(this.getHp() <= 0) {
+		if(hp <= 0) {
 			this.hp = 0;
 			String [] comment = {
 				this.getName() + "のHPが0になってしまった！",
@@ -47,14 +63,15 @@ public class Fighter extends Character {
 
 
 	public void setMp(int mp) {
-		if(this.getMp() > MAX_MP) {
+		if(mp > MAX_MP) {
 			this.mp= MAX_MP;
-		} else if(this.getMp() <= 0) {
-			this.mp = 0;
-		} else {
-			this.mp = mp;
 		}
-	}
+		if(mp <= 0) {
+			this.mp = 0;
+		}
+		this.mp = mp;
+		}
+
 
 	public void setName(String name)  {
 		if(name.length() <= 1) {
@@ -111,11 +128,11 @@ public class Fighter extends Character {
 
 	public void meditation() {
 		mdt++;
-		System.out.println(this.getName() + "は精神を集中させ、次の攻撃に備えた！"); 
+		System.out.println(this.getName() + "は精神を集中させ、次の攻撃に備えた！");
 	}
-	
+
 	public void run() {
-		System.out.println(this.name + "は一目散に逃げ出した！")
+		System.out.println(this.getName() + "は一目散に逃げ出した！");
 	}
 
 
