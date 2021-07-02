@@ -1,5 +1,3 @@
-package model;
-
 public class Wizard extends Character{
 	//属性・フィールド
 		private String name;
