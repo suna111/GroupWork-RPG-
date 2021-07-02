@@ -1,5 +1,3 @@
-package model;
-
 public class Fighter extends Character {
 	//フィールド
 	private String name;
